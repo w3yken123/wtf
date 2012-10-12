@@ -1,0 +1,125 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.user_id')%>:</b>
+  <%= User.find(@user_profile.user_id).username %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.surname')%>:</b>
+  <%= @user_profile.surname %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.name')%>:</b>
+  <%= @user_profile.name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.sex')%>:</b>
+  <%= if @user_profile.sex == true ; "男" else "女" ; end%>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.address')%>:</b>
+  <%= @user_profile.address %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.work_title')%>:</b>
+  <%= @user_profile.work_title %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.blood_type')%>:</b>
+  <%= @user_profile.blood_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.identification')%>:</b>
+  <%= @user_profile.identification %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.birthday')%>:</b>
+  <%= @user_profile.birthday.try(:to_date) %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.telephone')%>:</b>
+  <%= @user_profile.telephone %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.bank_code')%>:</b>
+  <%= @user_profile.bank_code %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.bank_account')%>:</b>
+  <%= @user_profile.bank_account %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.branch_name')%>:</b>
+  <%= @user_profile.branch_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.beneficiary_name')%>:</b>
+  <%= @user_profile.beneficiary_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.first_work')%>:</b>
+  <%= @user_profile.first_work.try(:to_date) %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.last_work')%>:</b>
+  <%= @user_profile.last_work.try(:to_date) %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.add_labor')%>:</b>
+  <%= @user_profile.add_labor.try(:to_date) %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.del_labor')%>:</b>
+  <%= @user_profile.del_labor.try(:to_date) %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.year_qk')%>:</b>
+  <%= @user_profile.year_qk %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.day_qk')%>:</b>
+  <%= @user_profile.day_qk %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.borrow_money')%>:</b>
+  <%= @user_profile.borrow_money %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.salary')%>:</b>
+  <%= @user_profile.salary %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.work_com')%>:</b>
+  <%= @user_profile.work_com %> %
+</p>
+
+<p>
+  <b><%= t('helpers.label.user_profile.protect_salary')%>:</b>
+  <%= @user_profile.protect_salary %>
+</p>
+
+
+<%= link_to '修改', edit_user_profile_path(@user_profile) %> |
+<%= link_to '返回', user_profiles_path %>

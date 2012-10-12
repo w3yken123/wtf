@@ -1,0 +1,113 @@
+<%= form_for(@user_profile) do |f| %>
+  <% if @user_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_profile.errors.count, "error") %> prohibited this user_profile from being saved:</h2>
+
+      <ul>
+      <% @user_profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+	<%= f.collection_select :user_id, User.find_all_by_id(@user_profile.user_id), :id, :username, :prompt => true  %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br />
+	<%= f.select :sex, options_for_select([["男",true], ["女",false]]), :class => 'class' %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :work_title %><br />
+    <%= f.select :work_title, options_for_select(["剪刀手", "助理", "設計師", "染燙手", "外野手", "投手"],@user_profile.work_title), :class => 'class' %>
+  </div>
+  <div class="field">
+    <%= f.label :blood_type %><br />
+    <%= f.select :blood_type, options_for_select(["O", "A", "B", "AB"]), :class => 'class' %>型
+  </div>
+  <div class="field">
+    <%= f.label :identification %><br />
+    <%= f.text_field :identification %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.datetime_select :birthday, :discard_hour => true, :order => [:year, :month, :day ], :prompt => { :day => '日', :month => '月', :year => '年' } %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :bank_code %><br />
+    <%= f.text_field :bank_code %>
+  </div>
+  <div class="field">
+    <%= f.label :bank_account %><br />
+    <%= f.text_field :bank_account %>
+  </div>
+  <div class="field">
+    <%= f.label :branch_name %><br />
+    <%= f.text_field :branch_name %>
+  </div>
+  <div class="field">
+    <%= f.label :beneficiary_name %><br />
+    <%= f.text_field :beneficiary_name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_work %><br />
+    <%= f.datetime_select :first_work, :discard_hour => true, :order => [:year, :month, :day ], :prompt => { :day => '日', :month => '月', :year => '年' } %>
+  </div>
+  <div class="field">
+    <%= f.label :last_work %><br />
+    <%= f.datetime_select :last_work, :discard_hour => true, :order => [:year, :month, :day ], :prompt => { :day => '日', :month => '月', :year => '年' } %>
+  </div>
+  <div class="field">
+    <%= f.label :add_labor %><br />
+    <%= f.datetime_select :add_labor, :discard_hour => true, :order => [:year, :month, :day ], :prompt => { :day => '日', :month => '月', :year => '年' } %>
+  </div>
+  <div class="field">
+    <%= f.label :del_labor %><br />
+    <%= f.datetime_select :del_labor, :discard_hour => true, :order => [:year, :month, :day ], :prompt => { :day => '日', :month => '月', :year => '年' } %>
+  </div>
+  <div class="field">
+    <%= f.label :year_qk %><br />
+    <%= f.number_field :year_qk %>
+  </div>
+  <div class="field">
+    <%= f.label :day_qk %><br />
+    <%= f.number_field :day_qk %>
+  </div>
+  <div class="field">
+    <%= f.label :borrow_money %><br />
+    <%= f.number_field :borrow_money, :value=>0 %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br />
+    <%= f.number_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :work_com %><br />
+    <%= f.number_field :work_com %> %
+  </div>
+  <div class="field">
+    <%= f.label :protect_salary %><br />
+    <%= f.number_field :protect_salary %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

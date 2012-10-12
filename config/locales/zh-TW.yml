@@ -1,0 +1,377 @@
+zh-TW: 
+  breadcrumb:
+    index: '首頁'
+    sessions-new: '會員登入'
+    passwords-edit: '設定新密碼'
+    registrations-new: '會員註冊'
+    requires-index: '訂製需求板'
+    requires-show: '訂製需求板'
+    requires-new: '刊登訂製需求'
+    requires-how_to_use: '如何使用'
+    requires-creation_stories: '任務故事'
+    requires-creation_story: '任務故事'
+    recruits-index: '加入特工'
+    pro_mainclasses-index: '訂製類別'
+    quotations-edit: '填寫報價單'
+    projects-index: '作品集'
+    projects-new: '作品集'
+    agents-list: '特工列表'
+    agents-show: '特工專區'
+    agents-head_image: '修改頭像'
+    agents-about_me: '關於我'
+    agents-require_agent: '訂製需求單'
+    agents-require_creation: '任務故事'
+    agents-creation_story: '任務故事'
+    agents-recommend: '評價'
+    agents-account: '帳號設定'
+    agents-edit: '交易付款設定'
+    agents-payment_record: '交易紀錄查詢'
+    customs-head_image: '修改頭像'
+    customs-show: '訂製需求單'
+    customs-require_creation: '任務故事'
+    customs-recommend: '評價'
+    customs-account: '帳號設定'
+    requires-standyby: #{current_user.id}
+  views:  
+    pagination:  
+      previous: "上一頁"  
+      next: "下一頁"  
+      truncate: "&hellip;"
+  date:
+    abbr_day_names:
+    - 日
+    - 一
+    - 二
+    - 三
+    - 四
+    - 五
+    - 六
+    abbr_month_names:
+    - 
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 星期日
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%Y年%b%d日'
+      short: ! '%b%d日'
+    month_names:
+    - 
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 大約一小時
+        other: 大約 %{count} 小時
+      about_x_months:
+        one: 大約一個月
+        other: 大約 %{count} 個月
+      about_x_years:
+        one: 大約一年
+        other: 大約 %{count} 年
+      almost_x_years:
+        one: 接近一年
+        other: 接近 %{count} 年
+      half_a_minute: 半分鐘
+      less_than_x_minutes:
+        one: 不到一分鐘
+        other: 不到 %{count} 分鐘
+      less_than_x_seconds:
+        one: 不到一秒
+        other: 不到 %{count} 秒
+      over_x_years:
+        one: 一年多
+        other: ! '%{count} 年多'
+      x_days:
+        one: 一天
+        other: ! '%{count} 天'
+      x_minutes:
+        one: 一分鐘
+        other: ! '%{count} 分鐘'
+      x_months:
+        one: 一個月
+        other: ! '%{count} 個月'
+      x_seconds:
+        one: 一秒
+        other: ! '%{count} 秒'
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: 必須是可被接受的
+      blank: 這裡必須填入資料
+      confirmation: 再輸入一次密碼不正確
+      empty: 不能留空
+      equal_to: 必須等於 %{count}
+      even: 必須是偶數
+      exclusion: 是被保留的關鍵字
+      greater_than: 必須大於 %{count}
+      greater_than_or_equal_to: 必須大於或等於 %{count}
+      inclusion: 沒有包含在列表中
+      invalid: 是無效的
+      less_than: 必須小於 %{count}
+      less_than_or_equal_to: 必須小於或等於 %{count}
+      not_a_number: 這裡必須是數字
+      not_an_integer: 必須是整數
+      odd: 必須是奇數
+      record_invalid: ! '校驗失敗: %{errors}'
+      taken: 已經被使用
+      too_long: 過長（最長是 %{count} 個字）
+      too_short: 過短（最短是 %{count} 個字）
+      wrong_length: 字數錯誤（必須是 %{count} 個字）
+    template:
+      body: 以下欄位發生問題：
+      header:
+        one: 有 1 個錯誤發生使得「%{model}」無法被儲存。
+        other: 有 %{count} 個錯誤發生使得「%{model}」無法被儲存。
+  devise:
+    omniauth_callbacks:
+      user:
+        failure: '三方登陆过程异常，请重试。'
+    failure:
+      already_authenticated: '您已经登录.'
+      unauthenticated: '繼續操作前請註冊或者登入'
+      unconfirmed: '请先激活您的帐号'
+      locked: '您的帐号已被锁定.'
+      invalid: '帳號或密碼錯誤'
+      invalid_token: '认证码无效.'
+      timeout: '您已登录超时，请重新登录.'
+      inactive: '您还没有激活帐户.'
+    sessions:
+      signed_in: '登录成功.'
+      signed_out: '退出成功.'
+    passwords:
+      send_instructions: '几分后，您将收到重置密码的电子邮件.'
+      updated: '您的密码已修改成功，请重新登录.'
+    confirmations:
+      send_instructions: '几分后，您将收到帐号激活的电子邮件.'
+      confirmed: '您的帐号已经激活，请登录.'
+    account:
+      signed_up: '您的帐号已注册成功，如无意外，您将地收到一封确认邮件.'
+      updated: '帐号资料更新成功.'
+      destroyed: '再见！您的帐户已成功注销。我们希望很快可以再见到您.'
+    unlocks:
+      send_instructions: '几分后，您将收到一封帐号解锁的邮件.'
+      unlocked: '您的帐号已成功解锁，请登录.'
+    mailer:
+      confirmation_instructions:
+        subject: '确认信息'
+      reset_password_instructions:
+        subject: '重置密码信息'
+      unlock_instructions:
+        subject: '解锁信息'
+  helpers:
+    select:
+      prompt: 請選擇
+    submit:
+      create: 新增%{model}
+      submit: 儲存%{model}
+      update: 更新%{model}
+    label:
+      product:
+        p_type: '商品類型'
+        p_name: '商品名稱'
+        p_unit: '單位'
+        p_price: '定價'
+        p_stock: '安全存量'
+        distributor_id: '供應商'
+        p_discount: '折扣'
+      pay_off:
+        product_id: '商品編號'
+        pay_type: '商品類別'
+        pay_name: '商品名稱'
+        pay_num: '數量'
+        pay_unit_price: '單價'
+        pay_discount: '折扣(%)'
+        pay_subtotal: '小計'		
+      pro_draw:
+        product_id: '商品編號'
+        draw_type: '商品類別'
+        draw_name: '商品名稱'
+        user_id: '領料人'
+        draw_num: '數量'
+        notes: '備註'
+      distributor:
+        corp_name: '公司名稱'
+        corp_type: '類別'
+        corp_tel: '公司電話'
+        corp_contact: '聯絡人'
+        corp_email: 'Email'
+        corp_address: '公司地址'
+      custom:
+        c_name: '客戶名稱'
+        c_birthday: '生日'
+        c_email: 'Email'
+        c_tel: '聯絡電話'	
+      bill:
+        custom_id: '客戶名稱'
+        designer: '設計師'
+        assistant: '助理'
+        c_source: '客戶來源'
+        bill_price: '應收價格'
+        assistant_score: '助理虛業績'
+        bill_final_price: '實收價格'	
+        appoint: '指定設計師'
+        expend_event_id: '消費項目'
+      expend_event:
+        expend_event_id: '帳單編號'
+        service_id: '服務項目'
+        e_name: '服務名稱'
+        e_type: '服務類型'
+        e_price: '價格'
+        e_discount: '折扣'
+        e_dcom: '設計師抽成'	
+        e_acom: '助理抽成'
+        e_combine: '服務項目組合'			
+      service:
+        s_name: '服務名稱'
+        s_type: '服務類型'
+        s_price: '價格'
+        s_discount: '折扣'
+        s_dcom: '設計師抽成'	
+        s_acom: '助理抽成'
+        s_combine: '服務項目組合'
+      user_profile:
+        user_id: '會員名稱'
+        surname: '姓氏'
+        name: '名字'
+        sex: '性別'
+        address: '地址'
+        work_title: '職稱'
+        blood_type: '血型'
+        identification: '身分證字號'
+        birthday: '生日'
+        telephone: '行動電話'
+        bank_code: '銀行名稱'
+        bank_account: '銀行帳號'
+        branch_name: '銀行分行'
+        beneficiary_name: '銀行戶名'
+        first_work: '到職日'	
+        last_work: '離職日'
+        add_labor: '加保日'
+        del_labor: '退保日'
+        year_qk: '年休'
+        day_qk: '月休'
+        borrow_money: '員工借款'
+        salary: '基本底薪'
+        work_com: '業績抽成'
+        protect_salary: '保障底薪'		
+      leave_list:
+        leave_type: '請假類型'													
+        subtract_money: '扣款'
+      leave_application:
+        user_id: '會員名稱'
+        leave_list_id: '請假事由'
+        leave_num: '次/分'		
+        leave_date: '請假日期'
+      pro_draw:
+        product_id: '商品編號'
+        draw_type: '商品類別'
+        draw_name: '商品名稱'	
+        user_id: '領料人'
+        draw_num: '數量'
+        notes: '備註'
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u %n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: 十億
+          million: 百萬
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', 和 '
+      two_words_connector: ! ' 和 '
+      words_connector: ! ', '
+  time:
+    am: 上午
+    formats:
+      default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
+      long: ! '%Y年%b%d日 %H:%M'
+      short: ! '%b%d日 %H:%M'
+    pm: 下午
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors

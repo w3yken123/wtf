@@ -1,0 +1,29 @@
+<h1>出缺勤紀錄</h1>
+
+<table>
+  <tr>
+    <th><%= t('helpers.label.leave_application.user_id')%></th>
+    <th><%= t('helpers.label.leave_application.leave_list_id')%></th>
+	<th><%= t('helpers.label.leave_application.leave_num')%></th>
+	<th><%= t('helpers.label.leave_application.leave_date')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @leave_applications.each do |leave_application| %>
+  <tr>
+    <td><%= User.find(leave_application.user_id).user_profile.name %></td>
+    <td><%= LeaveList.find(leave_application.leave_list_id).leave_type %></td>
+    <td><%= leave_application.leave_num %></td>
+    <td><%= leave_application.leave_date.try(:to_date) %></td>		
+    <td><%= link_to '查看', leave_application %></td>
+    <td><%= link_to '修改', edit_leave_application_path(leave_application) %></td>
+    <td><%= link_to '刪除', leave_application, method: :delete, data: { confirm: '你確定要刪除嗎?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增出缺勤紀錄', new_leave_application_path %>

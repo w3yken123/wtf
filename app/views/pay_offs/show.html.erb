@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.pay_off.pay_type')%>:</b>
+  <%= @pay_off.pay_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pay_off.pay_name')%>:</b>
+  <%= @pay_off.pay_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pay_off.pay_num')%>:</b>
+  <%= @pay_off.pay_num %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pay_off.pay_unit_price')%>:</b>
+  <%= @pay_off.pay_unit_price %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pay_off.pay_discount')%>:</b>
+  <%= @pay_off.pay_discount %> %
+</p>
+
+<p>
+  <b><%= t('helpers.label.pay_off.pay_subtotal')%>:</b>
+  <%= @pay_off.pay_subtotal %> 
+</p>
+
+
+<%= link_to '修改', edit_pay_off_path(@pay_off) %> |
+<%= link_to '返回', pay_offs_path %>

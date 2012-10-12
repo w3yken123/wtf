@@ -1,0 +1,41 @@
+<%= form_for(@distributor) do |f| %>
+  <% if @distributor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@distributor.errors.count, "error") %> prohibited this distributor from being saved:</h2>
+
+      <ul>
+      <% @distributor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :corp_name %><br />
+    <%= f.text_field :corp_name %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_type %><br />
+    <%= f.text_field :corp_type %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_tel %><br />
+    <%= f.text_field :corp_tel %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_contact %><br />
+    <%= f.text_field :corp_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_email %><br />
+    <%= f.text_field :corp_email %>
+  </div>
+  <div class="field">
+    <%= f.label :corp_address %><br />
+    <%= f.text_field :corp_address %>
+  </div>
+  <div class="actions">
+    <%= f.submit "確認送出" %>
+  </div>
+<% end %>

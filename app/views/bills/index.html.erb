@@ -1,0 +1,41 @@
+<h1>帳單表</h1>
+
+<table>
+  <tr>
+    <th>日期</th>
+    <th><%= t('helpers.label.bill.custom_id')%></th>
+    <th><%= t('helpers.label.bill.designer')%></th>
+    <th><%= t('helpers.label.bill.assistant')%></th>
+    <th><%= t('helpers.label.bill.c_source')%></th>
+    <th><%= t('helpers.label.bill.bill_price')%></th>
+    <th><%= t('helpers.label.bill.assistant_score')%></th>
+    <th><%= t('helpers.label.bill.bill_final_price')%></th>
+    <th><%= t('helpers.label.bill.appoint')%></th>
+    <th><%= t('helpers.label.bill.expend_event_id')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bills.each do |bill| %>
+  <tr>
+    <td><%= Custom.find(bill.custom_id).created_at.to_date %></td>
+    <td><%= Custom.find(bill.custom_id).c_name %></td>
+    <td><%= UserProfile.find(bill.designer).name %></td>
+    <td><%= UserProfile.find(bill.assistant).name %></td>
+    <td><%= bill.c_source %></td>
+    <td><%= bill.bill_price %></td>
+    <td><%= bill.assistant_score %></td>
+    <td><%= bill.bill_final_price %></td>
+    <td><%= if bill.appoint == true; "指定"; else "不指定"; end %></td>
+    <td><%= link_to bill.expend_events.size, "#" %></td>
+    <td><%= link_to '查看', bill %></td>
+    <td><%= link_to '修改', edit_bill_path(bill) %></td>
+    <td><%= link_to '刪除', bill, method: :delete, data: { confirm: '你確定刪除嗎?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增帳單', new_bill_path %>

@@ -1,0 +1,25 @@
+<h1>請假表</h1>
+
+<table>
+  <tr>
+    <th><%= t('helpers.label.leave_list.leave_type')%></th>
+    <th><%= t('helpers.label.leave_list.subtract_money')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @leave_lists.each do |leave_list| %>
+  <tr>
+    <td><%= leave_list.leave_type %></td>
+    <td><%= number_to_currency(leave_list.subtract_money, :precision => 0) %></td>
+    <td><%= link_to '查看', leave_list %></td>
+    <td><%= link_to '編輯', edit_leave_list_path(leave_list) %></td>
+    <td><%= link_to '刪除', leave_list, method: :delete, data: { confirm: '你確定刪除嗎?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增請假類型', new_leave_list_path %>

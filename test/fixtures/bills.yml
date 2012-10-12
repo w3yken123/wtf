@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  custom_id: 1
+  designer: 1
+  assistant: 1
+  c_source: MyString
+  bill_price: 1
+  assistant_score: 1
+  bill_final_price: 1
+  appoint: false
+  expend_event_id: 1
+
+two:
+  custom_id: 1
+  designer: 1
+  assistant: 1
+  c_source: MyString
+  bill_price: 1
+  assistant_score: 1
+  bill_final_price: 1
+  appoint: false
+  expend_event_id: 1

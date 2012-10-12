@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.custom.c_name')%>:</b>
+  <%= @custom.c_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.custom.c_birthday')%>:</b>
+  <%= @custom.c_birthday %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.custom.c_email')%>:</b>
+  <%= @custom.c_email %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.custom.c_tel')%>:</b>
+  <%= @custom.c_tel %>
+</p>
+
+
+<%= link_to '修改', edit_custom_path(@custom) %> |
+<%= link_to '返回', customs_path %>

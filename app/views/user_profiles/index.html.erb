@@ -1,0 +1,68 @@
+<h1>員工資料</h1>
+
+<table>
+  <tr>
+    <th><%= t('helpers.label.user_profile.user_id')%></th>
+    <th><%= t('helpers.label.user_profile.surname')%></th>
+    <th><%= t('helpers.label.user_profile.name')%></th>
+    <th><%= t('helpers.label.user_profile.sex')%></th>
+    <th><%= t('helpers.label.user_profile.address')%></th>
+    <th><%= t('helpers.label.user_profile.work_title')%></th>
+    <th><%= t('helpers.label.user_profile.blood_type')%></th>
+    <th><%= t('helpers.label.user_profile.identification')%></th>
+    <th><%= t('helpers.label.user_profile.birthday')%></th>
+    <th><%= t('helpers.label.user_profile.telephone')%></th>
+    <th><%= t('helpers.label.user_profile.bank_code')%></th>
+    <th><%= t('helpers.label.user_profile.bank_account')%></th>
+    <th><%= t('helpers.label.user_profile.branch_name')%></th>
+    <th><%= t('helpers.label.user_profile.beneficiary_name')%></th>
+    <th><%= t('helpers.label.user_profile.first_work')%></th>
+    <th><%= t('helpers.label.user_profile.last_work')%></th>
+    <th><%= t('helpers.label.user_profile.add_labor')%></th>
+    <th><%= t('helpers.label.user_profile.del_labor')%></th>
+    <th><%= t('helpers.label.user_profile.year_qk')%></th>
+    <th><%= t('helpers.label.user_profile.day_qk')%></th>
+    <th><%= t('helpers.label.user_profile.borrow_money')%></th>
+    <th><%= t('helpers.label.user_profile.salary')%></th>
+    <th><%= t('helpers.label.user_profile.work_com')%></th>
+    <th><%= t('helpers.label.user_profile.protect_salary')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.username %></td>
+    <td><%= user.user_profile.try(:surname) %></td>
+    <td><%= user.user_profile.try(:name) %></td>
+    <td><%= user.user_profile.try(:sex) %></td>
+    <td><%= user.user_profile.try(:address) %></td>
+    <td><%= user.user_profile.try(:work_title) %></td>
+    <td><%= user.user_profile.try(:blood_type) %></td>
+    <td><%= user.user_profile.try(:identification) %></td>
+    <td><%= user.user_profile.try(:birthday).try(:to_date) %></td>
+    <td><%= user.user_profile.try(:telephone) %></td>
+    <td><%= user.user_profile.try(:bank_code) %></td>
+    <td><%= user.user_profile.try(:bank_account) %></td>
+    <td><%= user.user_profile.try(:branch_name) %></td>
+    <td><%= user.user_profile.try(:beneficiary_name) %></td>
+    <td><%= user.user_profile.try(:first_work).try(:to_date) %></td>
+    <td><%= user.user_profile.try(:last_work).try(:to_date) %></td>
+    <td><%= user.user_profile.try(:add_labor).try(:to_date) %></td>
+    <td><%= user.user_profile.try(:del_labor).try(:to_date) %></td>
+    <td><%= user.user_profile.try(:year_qk) %></td>
+    <td><%= user.user_profile.try(:day_qk) %></td>
+    <td><%= user.user_profile.try(:borrow_money) %></td>
+    <td><%= user.user_profile.try(:salary) %></td>
+    <td><%= user.user_profile.try(:work_com) %></td>
+    <td><%= user.user_profile.try(:protect_salary) %></td>
+    <td><%= link_to '查看', user.try(:user_profile) %></td>
+    <td><%= link_to '修改', edit_user_profile_path(user.try(:user_profile)) %></td>
+    <td><%= link_to '刪除', user.user_profile, method: :delete, data: { confirm: '你確定要刪除嗎?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

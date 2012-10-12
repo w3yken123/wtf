@@ -1,0 +1,33 @@
+<h1>供應商資料</h1>
+
+<table>
+  <tr>
+    <th><%= t('helpers.label.distributor.corp_name')%></th>
+    <th><%= t('helpers.label.distributor.corp_type')%></th>
+    <th><%= t('helpers.label.distributor.corp_tel')%></th>
+    <th><%= t('helpers.label.distributor.corp_contact')%></th>
+    <th><%= t('helpers.label.distributor.corp_email')%></th>
+    <th><%= t('helpers.label.distributor.corp_address')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @distributors.each do |distributor| %>
+  <tr>
+    <td><%= distributor.corp_name %></td>
+    <td><%= distributor.corp_type %></td>
+    <td><%= distributor.corp_tel %></td>
+    <td><%= distributor.corp_contact %></td>
+    <td><%= distributor.corp_email %></td>
+    <td><%= distributor.corp_address %></td>
+    <td><%= link_to '查看', distributor %></td>
+    <td><%= link_to '修改', edit_distributor_path(distributor) %></td>
+    <td><%= link_to '刪除', distributor, method: :delete, data: { confirm: '你確定刪除嗎?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增供應商資料', new_distributor_path %>

@@ -1,0 +1,11 @@
+<div class="user_navigation"> 
+<% if user_signed_in? %>
+Hi! <%= current_user.username %>
+<%= link_to("Sign out", destroy_user_session_path, :method => :delete )%> <BR>
+<%= link_to "商品資料",products_path %> / <%= link_to "供應商資料",distributors_path %> / <%= link_to "應付帳款支付作業",pay_offs_path %> / <%= link_to "商品領料",pro_draws_path %><BR>
+<%= link_to "客戶資料表",customs_path %> / <%= link_to "帳單表",bills_path %> / <%= link_to "消費項目表",expend_events_path %> / <%= link_to "價目表",services_path %> <BR>
+<%= link_to "員工資料", user_profiles_path %> / <%= link_to "請假類型", leave_lists_path %> / <%= link_to "員工出勤表", leave_applications_path %>
+<% else %>
+<%= link_to "Sign in", new_user_session_path %>
+<%= link_to "Sign up", new_user_registration_path %> <% end %>
+</div>

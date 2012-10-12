@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.leave_application.user_id')%>:</b>
+  <%= User.find(@leave_application.user_id).user_profile.name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.leave_application.leave_list_id')%>:</b>
+  <%= LeaveList.find(@leave_application.leave_list_id).leave_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.leave_application.leave_num')%>:</b>
+  <%= @leave_application.leave_num %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.leave_application.leave_date')%>:</b>
+  <%= @leave_application.leave_date.try(:to_date) %>
+</p>
+
+
+<%= link_to '修改', edit_leave_application_path(@leave_application) %> |
+<%= link_to '返回', leave_applications_path %>

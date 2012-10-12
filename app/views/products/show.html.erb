@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.product.p_type')%>:</b>
+  <%= @product.p_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.product.p_name')%>:</b>
+  <%= @product.p_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.product.p_unit')%>:</b>
+  <%= @product.p_unit %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.product.p_price')%>:</b>
+  <%= @product.p_price %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.product.p_stock')%>:</b>
+  <%= @product.p_stock %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.product.distributor_id')%>:</b>
+  <%= @product.distributor_id %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.product.p_discount')%>:</b>
+  <%= @product.p_discount %>
+</p>
+
+
+<%= link_to '修改', edit_product_path(@product) %> |
+<%= link_to '返回商品資料首頁', products_path %>

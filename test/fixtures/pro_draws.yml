@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_id: 1
+  draw_type: MyString
+  draw_name: MyString
+  user_id: 1
+  draw_num: 1
+  notes: MyText
+
+two:
+  product_id: 1
+  draw_type: MyString
+  draw_name: MyString
+  user_id: 1
+  draw_num: 1
+  notes: MyText

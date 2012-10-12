@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.leave_list.leave_type')%>:</b>
+  <%= @leave_list.leave_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.leave_list.subtract_money')%>:</b>
+  <%= @leave_list.subtract_money %>
+</p>
+
+
+<%= link_to '修改', edit_leave_list_path(@leave_list) %> |
+<%= link_to '返回', leave_lists_path %>

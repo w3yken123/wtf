@@ -1,0 +1,31 @@
+<h1>客戶資料表</h1>
+
+<table>
+  <tr>
+    <th><%= t('helpers.label.custom.c_name')%></th>
+    <th><%= t('helpers.label.custom.c_birthday')%></th>
+    <th><%= t('helpers.label.custom.c_email')%></th>
+    <th><%= t('helpers.label.custom.c_tel')%></th>
+	<th>加入時間</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customs.each do |custom| %>
+  <tr>
+    <td><%= custom.c_name %></td>
+    <td><%= custom.c_birthday %></td>
+    <td><%= custom.c_email %></td>
+    <td><%= custom.c_tel %></td>
+	<td><%= custom.created_at.to_s(:db) %></td>
+    <td><%= link_to '查看', custom %></td>
+    <td><%= link_to '修改', edit_custom_path(custom) %></td>
+    <td><%= link_to '刪除', custom, method: :delete, data: { confirm: '你確定要刪除?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增客戶', new_custom_path %>

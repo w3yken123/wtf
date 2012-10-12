@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.distributor.corp_name')%>:</b>
+  <%= @distributor.corp_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.distributor.corp_type')%>:</b>
+  <%= @distributor.corp_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.distributor.corp_tel')%>:</b>
+  <%= @distributor.corp_tel %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.distributor.corp_contact')%>:</b>
+  <%= @distributor.corp_contact %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.distributor.corp_email')%>:</b>
+  <%= @distributor.corp_email %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.distributor.corp_address')%>:</b>
+  <%= @distributor.corp_address %>
+</p>
+
+
+<%= link_to '修改', edit_distributor_path(@distributor) %> |
+<%= link_to '返回', distributors_path %>

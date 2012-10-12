@@ -1,0 +1,55 @@
+<%= form_for(@bill) do |f| %>
+  <% if @bill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bill.errors.count, "error") %> prohibited this bill from being saved:</h2>
+
+      <ul>
+      <% @bill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :custom_id %><br />
+	<%= f.collection_select :custom_id, Custom.all, :id, :c_name, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :designer %><br />
+	<%= f.collection_select :designer, UserProfile.where("work_title='設計師'").all, :id, :name, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :assistant %><br />
+    <%= f.collection_select :assistant, UserProfile.where("work_title='助理'").all, :id, :name, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :c_source %><br />
+	<%= f.select :c_source, options_for_select([["請選擇",""], "開發","新客","介紹","再來"], @bill.c_source), :class => 'class' %>
+  </div>
+  <div class="field">
+    <%= f.label :bill_final_price %><br />
+    <%= f.number_field :bill_final_price %>
+  </div>
+  <div class="field">
+    <%= f.label :appoint %><br />
+    <%= f.check_box :appoint %>
+  </div>
+  <div class="field">
+    <h2><%= f.label :expend_event_id %></h2>
+  </div>
+  <div id="events" class="field">
+  <%= f.fields_for :expend_events do |expend_event| %>
+      <%= expend_event.collection_select :service_id, Service.all, :id, :s_name, :prompt => true %> 
+  <% end %>
+  </div>
+    
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<script>
+$('#events').click(function(){
+	
+});
+</script>

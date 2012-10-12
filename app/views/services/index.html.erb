@@ -1,0 +1,35 @@
+<h1>價目表</h1>
+
+<table>
+  <tr>
+    <th><%= t('helpers.label.service.s_name')%></th>
+    <th><%= t('helpers.label.service.s_type')%></th>
+    <th><%= t('helpers.label.service.s_price')%></th>
+    <th><%= t('helpers.label.service.s_discount')%></th>
+    <th><%= t('helpers.label.service.s_dcom')%></th>
+    <th><%= t('helpers.label.service.s_acom')%></th>
+    <th><%= t('helpers.label.service.s_combine')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @services.each do |service| %>
+  <tr>
+    <td><%= service.s_name %></td>
+    <td><%= service.s_type %></td>
+    <td><%= service.s_price %></td>
+    <td><%= service.s_discount %> %</td>
+    <td><%= service.s_dcom %> %</td> 
+    <td><%= service.s_acom %> %</td> 
+    <td><%= service.s_combine %></td>
+    <td><%= link_to '查看', service %></td>
+    <td><%= link_to '修改', edit_service_path(service) %></td>
+    <td><%= link_to '刪除', service, method: :delete, data: { confirm: '你確定刪除?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增資料', new_service_path %>

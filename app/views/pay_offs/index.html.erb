@@ -1,0 +1,37 @@
+<h1>應付帳款支付作業</h1>
+
+<table>
+  <tr>
+    <th>日期</th>
+    <th><%= t('helpers.label.pay_off.product_id')%></th>
+    <th><%= t('helpers.label.pay_off.pay_type')%></th>
+    <th><%= t('helpers.label.pay_off.pay_name')%></th>
+    <th><%= t('helpers.label.pay_off.pay_num')%></th>
+    <th><%= t('helpers.label.pay_off.pay_unit_price')%></th>
+    <th><%= t('helpers.label.pay_off.pay_discount')%></th>
+    <th><%= t('helpers.label.pay_off.pay_subtotal')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pay_offs.each do |pay_off| %>
+  <tr>
+    <td><%= pay_off.created_at.to_date %></td>
+    <td><%= pay_off.product_id %></td>
+    <td><%= pay_off.pay_type %></td>
+    <td><%= pay_off.pay_name %></td>
+    <td><%= pay_off.pay_num %></td>
+    <td><%= pay_off.pay_unit_price %></td>
+    <td><%= pay_off.pay_discount %></td>
+    <td><%= pay_off.pay_subtotal %></td>
+    <td><%= link_to '查看', pay_off %></td>
+    <td><%= link_to '修改', edit_pay_off_path(pay_off) %></td>
+    <td><%= link_to '刪除', pay_off, method: :delete, data: { confirm: '你確定刪除?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增帳款支付', new_pay_off_path %>

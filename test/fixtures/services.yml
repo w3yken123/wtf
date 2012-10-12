@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  s_name: MyString
+  s_type: MyString
+  s_price: 1
+  s_discount: 1
+  s_dcom: 1
+  s_acom: 1
+  s_combine: MyString
+
+two:
+  s_name: MyString
+  s_type: MyString
+  s_price: 1
+  s_discount: 1
+  s_dcom: 1
+  s_acom: 1
+  s_combine: MyString

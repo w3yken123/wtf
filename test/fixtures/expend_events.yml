@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  service_id: 1
+  e_name: MyString
+  e_type: MyString
+  e_price: MyString
+  e_price: 1
+  e_discount: 1
+  e_dcom: 1
+  e_acom: 1
+  e_combine: MyString
+
+two:
+  service_id: 1
+  e_name: MyString
+  e_type: MyString
+  e_price: MyString
+  e_price: 1
+  e_discount: 1
+  e_dcom: 1
+  e_acom: 1
+  e_combine: MyString

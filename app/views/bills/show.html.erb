@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.bill.custom_id')%>:</b>
+  <%= Custom.find(@bill.custom_id).c_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.designer')%>:</b>
+  <%= UserProfile.find(@bill.designer).name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.assistant')%>:</b>
+  <%= UserProfile.find(@bill.assistant).name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.c_source')%>:</b>
+  <%= @bill.c_source %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.bill_price')%>:</b>
+  <%= @bill.bill_price %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.assistant_score')%>:</b>
+  <%= @bill.assistant_score %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.bill_final_price')%>:</b>
+  <%= @bill.bill_final_price %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.appoint')%>:</b>
+  <%= if @bill.appoint ; "是";  else "no"; end%>
+</p>
+
+<p>
+  <b><%= t('helpers.label.bill.expend_event_id')%>:</b>
+</p>  
+
+<table>
+  <tr>
+  <td>服務類型</td>
+  <td>服務名稱</td>
+  <td>價格</td>
+  <td>折扣</td>
+  <td>助理抽成</td>
+  </tr>
+  
+  <% @bill.expend_events.each do |f| %>  
+  <tr>
+  <td><%= f.e_type %></td>
+  <td><%= f.e_name %></td>
+  <td><%= f.e_price %></td>
+  <td><%= f.e_discount %></td>
+  <td><%= f.e_acom %></td>
+  </tr>
+  <% @total =  @total.to_i + f.e_price.to_i-(f.e_price.to_i*f.e_discount/100).round %>
+  <% @assistant_score = @assistant_score.to_i + ( (f.e_price.to_i-(f.e_price.to_i*f.e_discount/100).round)*f.e_acom/100  ) %>
+  <% end %>
+</table>
+<p> 
+此單業績：<%=h @total %> 
+</p>
+<p> 
+設計師虛業績：<%=h @bill.bill_final_price-@assistant_score %>  
+</p>
+<p> 
+助理虛業績：<%=h @assistant_score %>  
+</p>
+
+
+<%= link_to '修改', edit_bill_path(@bill) %> |
+<%= link_to '返回', bills_path %>

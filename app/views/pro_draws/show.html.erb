@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.pro_draw.draw_type')%>:</b>
+  <%= @pro_draw.draw_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pro_draw.draw_name')%>:</b>
+  <%= @pro_draw.draw_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pro_draw.user_id')%>:</b>
+  <%= UserProfile.find(@pro_draw.user_id).name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pro_draw.draw_num')%>:</b>
+  <%= @pro_draw.draw_num %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.pro_draw.notes')%>:</b>
+  <%= @pro_draw.notes %>
+</p>
+
+
+<%= link_to '修改', edit_pro_draw_path(@pro_draw) %> |
+<%= link_to '返回', pro_draws_path %>

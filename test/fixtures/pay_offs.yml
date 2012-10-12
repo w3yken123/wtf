@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pay_type: MyString
+  pay_name: MyString
+  pay_num: 1
+  pay_unit_price: 1
+  pay_discount: 1
+  pay_subtotal: 1
+
+two:
+  pay_type: MyString
+  pay_name: MyString
+  pay_num: 1
+  pay_unit_price: 1
+  pay_discount: 1
+  pay_subtotal: 1

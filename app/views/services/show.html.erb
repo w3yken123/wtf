@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t('helpers.label.service.s_type')%>:</b>
+  <%= @service.s_type %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.service.s_name')%>:</b>
+  <%= @service.s_name %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.service.s_price')%>:</b>
+  <%= @service.s_price %>
+</p>
+
+<p>
+  <b><%= t('helpers.label.service.s_discount')%>:</b>
+  <%= @service.s_discount %> %
+</p>
+
+<p>
+  <b><%= t('helpers.label.service.s_dcom')%>:</b>
+  <%= @service.s_dcom %> %
+</p>
+
+<p>
+  <b><%= t('helpers.label.service.s_acom')%>:</b>
+  <%= @service.s_acom %> %
+</p>
+
+<p>
+  <b><%= t('helpers.label.service.s_combine')%>:</b>
+  <%= @service.s_combine %>
+</p>
+
+
+<%= link_to '修改', edit_service_path(@service) %> |
+<%= link_to '返回價目表首頁', services_path %>

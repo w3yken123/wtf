@@ -1,0 +1,33 @@
+<%= form_for(@custom) do |f| %>
+  <% if @custom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom.errors.count, "error") %> prohibited this custom from being saved:</h2>
+
+      <ul>
+      <% @custom.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :c_name %><br />
+    <%= f.text_field :c_name %>
+  </div>
+  <div class="field">
+    <%= f.label :c_birthday %><br />
+    <%= f.date_select :c_birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :c_email %><br />
+    <%= f.text_field :c_email %>
+  </div>
+  <div class="field">
+    <%= f.label :c_tel %><br />
+    <%= f.text_field :c_tel %>
+  </div>
+  <div class="actions">
+    <%= f.submit "確定送出" %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  leave_type: MyString
+  subtract_money: 1
+
+two:
+  leave_type: MyString
+  subtract_money: 1

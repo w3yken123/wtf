@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  p_type: MyString
+  p_name: MyString
+  p_unit: MyString
+  p_price: 1
+  p_stock: 1
+  distributor_id: 1
+  p_discount: 1
+
+two:
+  p_type: MyString
+  p_name: MyString
+  p_unit: MyString
+  p_price: 1
+  p_stock: 1
+  distributor_id: 1
+  p_discount: 1

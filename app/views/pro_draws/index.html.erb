@@ -1,0 +1,33 @@
+<h1>領取商品</h1>
+
+<table>
+  <tr>
+    <th><%= t('helpers.label.pro_draw.product_id')%></th>
+    <th><%= t('helpers.label.pro_draw.draw_type')%></th>
+    <th><%= t('helpers.label.pro_draw.draw_name')%></th>
+    <th><%= t('helpers.label.pro_draw.user_id')%></th>
+    <th><%= t('helpers.label.pro_draw.draw_num')%></th>
+    <th><%= t('helpers.label.pro_draw.notes')%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pro_draws.each do |pro_draw| %>
+  <tr>
+    <td><%= pro_draw.product_id %></td>
+    <td><%= pro_draw.draw_type %></td>
+    <td><%= pro_draw.draw_name %></td>
+    <td><%= pro_draw.user_id %></td>
+    <td><%= pro_draw.draw_num %></td>
+    <td><%= pro_draw.notes %></td>
+    <td><%= link_to '查看', pro_draw %></td>
+    <td><%= link_to '修改', edit_pro_draw_path(pro_draw) %></td>
+    <td><%= link_to '刪除', pro_draw, method: :delete, data: { confirm: '你確定要刪除嗎?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '領取商品 填寫單', new_pro_draw_path %>

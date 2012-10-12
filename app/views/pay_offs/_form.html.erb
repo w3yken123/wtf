@@ -1,0 +1,53 @@
+<%= form_for(@pay_off) do |f| %>
+  <% if @pay_off.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pay_off.errors.count, "error") %> prohibited this pay_off from being saved:</h2>
+
+      <ul>
+      <% @pay_off.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.collection_select :product_id, Product.all, :id, :p_name, :prompt => true  %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_num %><br />
+    <%= f.number_field :pay_num %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_unit_price %><br />
+    <%= f.number_field :pay_unit_price %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_discount %><br />
+    <%= f.number_field :pay_discount %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_subtotal %><br />
+    <%= f.number_field :pay_subtotal %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div id="aaa">
+  </div>
+<% end %>
+<script>
+jQuery(document).ready(function($){  
+  $('input[name="pay_off[pay_num]"]').keyup(function(){
+    $('input[name="pay_off[pay_subtotal]"]').val(Math.round($('input[name="pay_off[pay_num]"]').val()*$('input[name="pay_off[pay_unit_price]"]').val()*(100-$('input[name="pay_off[pay_discount]"]').val())/100));
+  });
+  $('input[name="pay_off[pay_unit_price]"]').keyup(function(){
+    $('input[name="pay_off[pay_subtotal]"]').val(Math.round($('input[name="pay_off[pay_num]"]').val()*$('input[name="pay_off[pay_unit_price]"]').val()*(100-$('input[name="pay_off[pay_discount]"]').val())/100));
+  });
+  $('input[name="pay_off[pay_discount]"]').keyup(function(){
+    $('input[name="pay_off[pay_subtotal]"]').val(Math.round($('input[name="pay_off[pay_num]"]').val()*$('input[name="pay_off[pay_unit_price]"]').val()*(100-$('input[name="pay_off[pay_discount]"]').val())/100));
+  });
+
+})
+</script>

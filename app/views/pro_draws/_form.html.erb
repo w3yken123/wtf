@@ -1,0 +1,33 @@
+<%= form_for(@pro_draw) do |f| %>
+  <% if @pro_draw.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pro_draw.errors.count, "error") %> prohibited this pro_draw from being saved:</h2>
+
+      <ul>
+      <% @pro_draw.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.collection_select :product_id, Product.all, :id, :p_name, :prompt => true  %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.collection_select :user_id, UserProfile.all, :id, :name, :prompt => true  %>
+  </div>
+  <div class="field">
+    <%= f.label :draw_num %><br />
+    <%= f.number_field :draw_num %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

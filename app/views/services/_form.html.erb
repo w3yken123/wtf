@@ -1,0 +1,44 @@
+<%= form_for(@service) do |f| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% @service.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :s_type %><br />
+    <%= f.select :s_type, options_for_select([["請選擇",""], "一般","技術","組合"], @service.s_type), :class => 'class' %>
+  </div>
+  <div class="field">
+    <%= f.label :s_name %><br />
+    <%= f.text_field :s_name %>
+  </div>
+  <div class="field">
+    <%= f.label :s_price %><br />
+    <%= f.number_field :s_price %>
+  </div>
+  <div class="field">
+    <%= f.label :s_discount %><br />
+    <%= f.number_field :s_discount, :value=>0 %> %
+  </div>
+  <div class="field">
+    <%= f.label :s_dcom %><br />
+    <%= f.number_field :s_dcom %> %
+  </div>
+  <div class="field">
+    <%= f.label :s_acom %><br />
+    <%= f.number_field :s_acom %> %
+  </div>
+  <div class="field">
+    <%= f.label :s_combine %><br />
+    <%= f.text_field :s_combine %>
+  </div>
+  <div class="actions">
+    <%= f.submit "確認送出" %>
+  </div>
+<% end %>

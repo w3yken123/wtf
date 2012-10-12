@@ -1,0 +1,53 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  surname: MyString
+  name: MyString
+  sex: false
+  address: MyString
+  work_title: MyString
+  blood_type: MyString
+  identification: MyString
+  birthday: 2012-10-12 11:49:26
+  telephone: MyString
+  bank_code: MyString
+  bank_account: MyString
+  branch_name: MyString
+  beneficiary_name: MyString
+  first_work: 2012-10-12 11:49:26
+  last_work: 2012-10-12 11:49:26
+  add_labor: 
+  del_labor_date: 
+  year_qk: 1
+  day_qk: 1
+  borrow_money: 1
+  salary: 1
+  work_com: 1
+  protect_salary: 1
+
+two:
+  user_id: 1
+  surname: MyString
+  name: MyString
+  sex: false
+  address: MyString
+  work_title: MyString
+  blood_type: MyString
+  identification: MyString
+  birthday: 2012-10-12 11:49:26
+  telephone: MyString
+  bank_code: MyString
+  bank_account: MyString
+  branch_name: MyString
+  beneficiary_name: MyString
+  first_work: 2012-10-12 11:49:26
+  last_work: 2012-10-12 11:49:26
+  add_labor: 
+  del_labor_date: 
+  year_qk: 1
+  day_qk: 1
+  borrow_money: 1
+  salary: 1
+  work_com: 1
+  protect_salary: 1

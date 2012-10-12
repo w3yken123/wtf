@@ -1,0 +1,25 @@
+<%= form_for(@leave_list) do |f| %>
+  <% if @leave_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leave_list.errors.count, "error") %> prohibited this leave_list from being saved:</h2>
+
+      <ul>
+      <% @leave_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :leave_type %><br />
+    <%= f.text_field :leave_type %>
+  </div>
+  <div class="field">
+    <%= f.label :subtract_money %><br />
+    <%= f.number_field :subtract_money %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

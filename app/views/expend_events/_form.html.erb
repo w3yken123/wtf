@@ -1,0 +1,53 @@
+<%= form_for(@expend_event) do |f| %>
+  <% if @expend_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expend_event.errors.count, "error") %> prohibited this expend_event from being saved:</h2>
+
+      <ul>
+      <% @expend_event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :service_id %><br />
+	<%= f.collection_select :service_id, Service.all, :id, :s_name, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :e_name %><br />
+    <%= f.text_field :e_name %>
+  </div>
+  <div class="field">
+    <%= f.label :e_type %><br />
+    <%= f.text_field :e_type %>
+  </div>
+  <div class="field">
+    <%= f.label :e_price %><br />
+    <%= f.text_field :e_price %>
+  </div>
+  <div class="field">
+    <%= f.label :e_price %><br />
+    <%= f.number_field :e_price %>
+  </div>
+  <div class="field">
+    <%= f.label :e_discount %><br />
+    <%= f.number_field :e_discount %>
+  </div>
+  <div class="field">
+    <%= f.label :e_dcom %><br />
+    <%= f.number_field :e_dcom %>
+  </div>
+  <div class="field">
+    <%= f.label :e_acom %><br />
+    <%= f.number_field :e_acom %>
+  </div>
+  <div class="field">
+    <%= f.label :e_combine %><br />
+    <%= f.text_field :e_combine %>
+  </div>
+  <div class="actions">
+    <%= f.submit "確認送出"%>
+  </div>
+<% end %>
